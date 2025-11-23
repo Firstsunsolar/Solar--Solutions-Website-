@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Solar Solutions — Home</title>
+    <meta name="description" content="Solar Solutions — premium solar panels, battery storage and water heating systems for homes & businesses." />
+    <meta name="keywords" content="solar, solar panels, solar battery, water heating, renewable energy, Nigeria" />
+    <meta name="author" content="Solar Solutions" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2218%22>☀️</text></svg>" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;600;700;900&family=Noto+Sans:wght@400;600;700" rel="stylesheet" />
+
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <style>
+      /* Minimal animation helpers */
+      .fade-up { opacity:0; transform: translateY(18px); transition: all 0.7s cubic-bezier(.2,.9,.2,1); }
+      .fade-up.show { opacity:1; transform: translateY(0); }
+      .fade-in { opacity:0; transition: opacity .8s ease; }
+      .fade-in.show { opacity:1; }
+      .hover-zoom { transition: transform .28s ease, box-shadow .28s ease; }
+      .hover-zoom:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 10px 30px rgba(2,6,23,.08); }
+
+      /* Hide native scrollbar for horizontal scrollers */
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      /* small helper for container max width on narrow screens */
+      @media (max-width:640px) {
+        .px-desktop { padding-left: 1rem; padding-right: 1rem; }
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-50 text-slate-900" style='font-family:Inter, "Noto Sans", sans-serif;'>
+    <!-- HEADER -->
+    <header class="bg-white border-b sticky top-0 z-40 fade-in">
+      <div class="max-w-6xl mx-auto flex items-center justify-between px-10 py-4">
+        <div class="flex items-center gap-3">
+          <div class="text-[#19a2e6]">
+            <svg width="40" height="40" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"/>
+            </svg>
+          </div>
+          <h1 class="text-lg font-bold">Solar Solutions</h1>
+        </div>
+
+        <nav class="hidden md:flex gap-8 items-center text-sm font-medium">
+          <a href="index.html" class="hover:text-[#19a2e6]">Home</a>
+          <a href="products/solar-panels.html" class="hover:text-[#19a2e6]">Products</a>
+          <a href="contact.html" class="hover:text-[#19a2e6]">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="contact.html" class="bg-[#19a2e6] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#1188c5]">Get a Quote</a>
+          <a href="products/solar-panels.html" class="bg-slate-100 px-4 py-2 rounded-lg hover:bg-slate-200 font-semibold">Shop</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="max-w-6xl mx-auto px-10 py-12 md:py-20">
+      <div class="bg-cover bg-center rounded-xl overflow-hidden" style='background-image: linear-gradient(180deg, rgba(3,7,18,0.08), rgba(2,6,23,0.45)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCdm3k2h9gtNOEIQ47wxsBNNEMSRLX1zrKYNGBZVokD7FOMIXxpk_ym88CL7fV2oyCbTcizfRvEDhkV0tKr0Sio6m4nBqcXwCAW3DRdFRSlpoUWNXjdc6sLrvkP9TqLJIAWbBEgVioxLeaG_JvSB2kQr-vgaxRrUFerwIzHQOLv9u84RITPd-F__PATfCHv5vW2BAEzaIZpzIAoVncLAC0ahTedu4xDnDWe9MYdU6YxlgVYWFrVhgsVRFHeL08vaVLOsGLf4j5dUwY");'>
+        <div class="px-6 py-14 md:px-12 md:py-20">
+          <h2 class="text-white text-4xl md:text-5xl font-extrabold leading-tight fade-up">Power Your Future with Solar</h2>
+          <p class="text-white/90 mt-3 max-w-2xl fade-up">Discover sustainable energy solutions for your home and business. Reduce your carbon footprint and lower energy bills with efficient, reliable systems.</p>
+
+          <div class="mt-8 flex gap-3">
+            <a href="products/solar-panels.html" class="inline-block bg-[#19a2e6] text-white px-5 py-3 rounded-lg font-bold hover:scale-105 transition">Explore Products</a>
+            <a href="contact.html" class="inline-block bg-white text-slate-900 px-4 py-3 rounded-lg font-semibold hover:bg-slate-100 transition">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="max-w-6xl mx-auto px-10 py-10">
+      <div class="flex items-center justify-between">
+        <h3 class="text-2xl font-bold fade-up">Featured Products</h3>
+        <a href="products/solar-panels.html" class="text-sm text-[#19a2e6] hover:underline">See all products →</a>
+      </div>
+
+      <div class="mt-6 flex gap-5 overflow-x-auto no-scrollbar py-3">
+        <!-- card 1 -->
+        <article class="min-w-[240px] bg-white rounded-xl p-3 hover-zoom fade-up">
+          <div class="h-40 rounded-lg bg-cover bg-center" style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuDznCdceOXn5L6w2PcQJYwBpI681r1HyqacVZe-KCnMluCy2MtNc1S9ReVzj2OdMAMPEDTIvR4uDH25jHdQnTvA1RRzw_ZT7ibXJz7LVCafDkxVXAO5C1UdQWM-6ZX2bJTOZqgJlTal3iNts6zwzq_LBAHYUE3xcWwbEEeucPPCRHEuw8riKmYAJgkH3L7_9-ISt60v1rnl49IVn7ETD6G20L_eGYKvMl737AH1d1sR8Q-TV7ln5RAAM7v9FkWs-oT4R4VuFJS-9Y4");'></div>
+          <h4 class="mt-3 font-semibold">Residential Solar Panel System</h4>
+          <p class="text-sm text-slate-500">High-efficiency panels built for rooftop performance.</p>
+          <a href="products/solar-panels.html" class="mt-3 inline-block text-[#19a2e6] hover:underline">View product →</a>
+        </article>
+
+        <!-- card 2 -->
+        <article class="min-w-[240px] bg-white rounded-xl p-3 hover-zoom fade-up">
+          <div class="h-40 rounded-lg bg-cover bg-center" style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuDc_WR_yOpT1pkcjludpTcVqk36lTKdr_HhxtPA9hxWDPLbp-kzn5Nu7dYVxTyy5mzcEF-jyamQ_7vLz5FX4hlPI8hCjCWUSudqQkwYjqwBYbvwKJFJ2VLmCa8i18Ysepmzu9nc-ufdImudSPB2tiJAMV5Dj9YdurLwvnaeLid4RZDoXGYAyTTFM1F3QZsSNYwvF95aL5UbLr4zcVHrz5U2p7y4_tSLNbeZotVVwvSRDDck5hpVIMwluVS0pKySyIGA6iloGNsUn6E");'></div>
+          <h4 class="mt-3 font-semibold">Solar Water Heating System</h4>
+          <p class="text-sm text-slate-500">Eco-friendly water heating built to last.</p>
+          <a href="products/water-heater.html" class="mt-3 inline-block text-[#19a2e6] hover:underline">View product →</a>
+        </article>
+
+        <!-- card 3 -->
+        <article class="min-w-[240px] bg-white rounded-xl p-3 hover-zoom fade-up">
+          <div class="h-40 rounded-lg bg-cover bg-center" style='background-image:url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5AjliJ1bh6Gthoex19YqDc-YuPLxuALCiddHQTW1lkrRvenqGSN0imScPimCCiMWbHO7l6-uRYJwgy4gDUmsZKTP_bLy8FZh36U369z4xQB6XjXa0xdhhyPZvgYzwfESj2rRpx3NNiHVnQwwiYpPYRGaOJkNMJ-ejaaNLPDvQHsNQLchOQ-ZWLEtNV02vGYTF9cZoAEGh3ZpPpIerDSQpTGGfyT6rikdEeVkKrDmni4tqF3qO2AHhsqspzeuuhdoATfFn1qxSmgA");'></div>
+          <h4 class="mt-3 font-semibold">Solar Battery Storage</h4>
+          <p class="text-sm text-slate-500">Reliable energy storage for nighttime & backup.</p>
+          <a href="products/battery-storage.html" class="mt-3 inline-block text-[#19a2e6] hover:underline">View product →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="max-w-6xl mx-auto px-10 py-10">
+      <h3 class="text-3xl font-bold fade-up">Why Choose Solar?</h3>
+      <p class="text-slate-600 mt-3 fade-up max-w-2xl">Solar reduces energy bills, lowers carbon footprint and creates energy independence for homes & businesses.</p>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-white p-6 rounded-xl hover-zoom fade-up">
+          <h4 class="font-semibold mb-2">Environmentally Friendly</h4>
+          <p class="text-sm text-slate-500">Reduce emissions and invest in a cleaner planet.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl hover-zoom fade-up">
+          <h4 class="font-semibold mb-2">Cost Savings</h4>
+          <p class="text-sm text-slate-500">Lower electricity bills and attractive ROI.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl hover-zoom fade-up">
+          <h4 class="font-semibold mb-2">Energy Independence</h4>
+          <p class="text-sm text-slate-500">Generate and store power for reliability in outages.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="max-w-6xl mx-auto px-10 py-10 fade-up">
+      <h3 class="text-2xl font-bold">Customer Testimonials</h3>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-5 rounded-xl">
+          <p class="font-semibold">Emily Carter</p>
+          <p class="text-sm text-yellow-500">★★★★★</p>
+          <p class="text-slate-600 mt-2">I'm thrilled with my solar panel system! Energy bills went down dramatically.</p>
+        </div>
+        <div class="bg-white p-5 rounded-xl">
+          <p class="font-semibold">David Lee</p>
+          <p class="text-sm text-yellow-500">★★★★★</p>
+          <p class="text-slate-600 mt-2">Professional installation and great product quality.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="max-w-6xl mx-auto px-10 py-12 fade-up">
+      <div class="bg-[#f7fbff] border rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <h4 class="text-xl font-bold">Ready to switch to solar?</h4>
+          <p class="text-slate-600 mt-1">Get a free quote and consultation for your home or business.</p>
+        </div>
+        <div>
+          <a href="contact.html" class="bg-[#19a2e6] text-white px-5 py-3 rounded-lg font-bold hover:bg-[#1188c5]">Get a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t mt-12">
+      <div class="max-w-6xl mx-auto px-10 py-8 text-sm text-slate-600 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>© 2025 Solar Solutions</div>
+        <div class="flex gap-4">
+          <a href="index.html" class="hover:underline">Home</a>
+          <a href="products/solar-panels.html" class="hover:underline">Products</a>
+          <a href="contact.html" class="hover:underline">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- IntersectionObserver to reveal sections -->
+    <script>
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('show');
+        });
+      }, { threshold: 0.18 });
+
+      document.querySelectorAll('.fade-up, .fade-in').forEach(el => io.observe(el));
+    </script>
+  </body>
+      </html>
