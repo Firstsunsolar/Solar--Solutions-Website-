@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact — Solar Solutions</title>
+    <meta name="description" content="Contact Solar Solutions — request quotes, ask questions or schedule a consultation." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2218%22 font-size=%2218%22>☀️</text></svg>" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@400;600;700" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .fade-up { opacity:0; transform: translateY(18px); transition: all 0.7s cubic-bezier(.2,.9,.2,1); }
+      .fade-up.show { opacity:1; transform: translateY(0); }
+      .form-success { background: #ecfdf5; color: #065f46; border: 1px solid #bbf7d0; padding: 12px; border-radius: 8px; }
+      .form-error { background: #fff1f2; color: #7f1d1d; border: 1px solid #fecaca; padding: 12px; border-radius: 8px; }
+    </style>
+  </head>
+
+  <body class="bg-slate-50 text-slate-900" style='font-family:Inter, system-ui, sans-serif;'>
+    <header class="bg-white border-b">
+      <div class="max-w-6xl mx-auto px-10 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <svg width="36" height="36" viewBox="0 0 48 48" fill="#19a2e6" xmlns="http://www.w3.org/2000/svg"><path d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z"/></svg>
+          <h1 class="font-bold">Solar Solutions</h1>
+        </div>
+
+        <nav class="hidden md:flex gap-6 text-sm">
+          <a href="index.html" class="hover:text-[#19a2e6]">Home</a>
+          <a href="products/solar-panels.html" class="hover:text-[#19a2e6]">Products</a>
+          <a href="contact.html" class="hover:text-[#19a2e6]">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+      <h2 class="text-3xl font-bold fade-up">Get in touch</h2>
+      <p class="text-slate-600 mt-2 fade-up">Fill the form and we'll get back to you within 24–48 hours.</p>
+
+      <div class="mt-8 bg-white p-6 rounded-xl shadow-sm fade-up">
+        <!-- Form -->
+        <form id="contactForm" class="grid grid-cols-1 gap-4" autocomplete="on">
+          <!-- honeypot (hidden) -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <!-- metadata for FormSubmit (we use AJAX endpoint) -->
+          <input type="hidden" name="_subject" value="New Contact Form Submission — Solar Solutions" />
+          <input type="hidden" name="_template" value="table" />
+
+          <label class="flex flex-col">
+            <span class="font-semibold">Full name</span>
+            <input required name="name" id="name" type="text" class="mt-2 border rounded-md p-3" placeholder="Jane Doe" />
+          </label>
+
+          <label class="flex flex-col">
+            <span class="font-semibold">Email</span>
+            <input required name="email" id="email" type="email" class="mt-2 border rounded-md p-3" placeholder="you@example.com" />
+          </label>
+
+          <label class="flex flex-col">
+            <span class="font-semibold">Phone (optional)</span>
+            <input name="phone" id="phone" type="tel" class="mt-2 border rounded-md p-3" placeholder="+234 123 4567" />
+          </label>
+
+          <label class="flex flex-col col-span-1">
+            <span class="font-semibold">Message</span>
+            <textarea required name="message" id="message" rows="5" class="mt-2 border rounded-md p-3" placeholder="Tell us about your project..."></textarea>
+          </label>
+
+          <div class="flex items-center gap-3">
+            <button id="submitBtn" type="submit" class="bg-[#19a2e6] text-white px-5 py-3 rounded-lg font-semibold hover:bg-[#1188c5]">Send Message</button>
+            <div id="formStatus" aria-live="polite"></div>
+          </div>
+        </form>
+
+        <p class="mt-4 text-sm text-slate-500">Or email us directly at <a href="mailto:firstsunsolarnig@gmail.com" class="text-[#19a2e6]">firstsunsolarnig@gmail.com</a></p>
+      </div>
+    </main>
+
+    <footer class="max-w-6xl mx-auto px-6 py-8 text-sm text-slate-600">
+      © 2025 Solar Solutions — <a href="index.html" class="hover:underline">Home</a>
+    </footer>
+
+    <script>
+      // Reveal animations
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+      }, { threshold: 0.18 });
+      document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+      // AJAX submit to FormSubmit
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const statusBox = document.getElementById('formStatus');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // simple client-side validation
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+        if (!name || !email || !message) {
+          statusBox.innerHTML = '<div class="form-error">Please fill all required fields.</div>';
+          return;
+        }
+
+        // prepare data
+        const formData = new FormData(form);
+
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Sending...';
+        statusBox.innerHTML = '';
+
+        try {
+          const res = await fetch('https://formsubmit.co/ajax/firstsunsolarnig@gmail.com', {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: formData
+          });
+
+          const json = await res.json();
+          if (json.success === 'true' || res.ok) {
+            statusBox.innerHTML = '<div class="form-success">Thanks! Your message has been sent. We will reply shortly.</div>';
+            form.reset();
+          } else {
+            throw new Error('Form submission failed');
+          }
+        } catch (err) {
+          console.error(err);
+          statusBox.innerHTML = '<div class="form-error">Oops — something went wrong. Please try again or email firstsunsolarnig@gmail.com directly.</div>';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerText = 'Send Message';
+        }
+      });
+    </script>
+  </body>
+</html>
